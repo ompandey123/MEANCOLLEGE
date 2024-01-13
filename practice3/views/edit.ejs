@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employees</title>
+</head>
+<body>
+    <h1>Add Employees</h1>
+    <form action="/edit/<%= emp._id %>" method="post" enctype="multipart/form-data">
+        Username:
+        <input type="text" name="username" id="username" value="<%= emp.username %>"><br><br>
+        Password:
+        <input type="password" name="password" id="password" value="<%= emp.password %>"><br><br>
+        Select Qualification:
+        <select name="qualification">
+            <option value="<%= emp.qualification %>"><%= emp.qualification %></option>
+        </select><br><br>
+        <input type="file" name="image" id="image" value="<%= emp.image %>"><br><br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

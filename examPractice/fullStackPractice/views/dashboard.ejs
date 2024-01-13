@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <table border="2px">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% users.forEach((item) => { %>
+                <tr>
+                <td><%= item.username %></td>
+                <td><%= item.email %></td>
+                <td><%= item.address %></td>
+                <td><img src="/uploads/<%= item.image %>" width="50" alt=""></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

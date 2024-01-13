@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <table border="5px">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Image</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((item)=> { %>
+                <tr>
+                    <td><%= item.name %></td>
+                    <td><%= item.email %></td>
+                    <td><%= item.address %></td>
+                    <td><img src="/uploads/<%= item.image %>" height="100" width="100"></td>
+                    <td><a href="/delete/<%= item._id %>">Delete</a></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

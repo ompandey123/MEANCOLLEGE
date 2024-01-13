@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="angForm">
+            <div class="form-group">
+                <label class="col-md-4">Book Name</label>
+                <input type="text" formControlName="bookname" class="form-control">
+            </div>
+            <div *ngIf="angForm.controls['bookname'].errors != null && angForm.controls['bookname'].invalid && (angForm.controls['bookname'].dirty || angForm.controls['bookname'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['bookname'].errors['required'] != null" >
+                  Book Name is required.
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4">Book Type</label>
+                <input type="text"  formControlName="booktype" class="form-control" />
+              </div>
+              <div *ngIf="angForm.controls['booktype'].errors != null && angForm.controls['booktype'].invalid && (angForm.controls['booktype'].dirty || angForm.controls['booktype'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['booktype'].errors['required'] != null">
+                  Book Type is required.
+                </div>
+              </div>  
+              <div class="form-group">
+                <label class="col-md-4">Author</label>
+                <input type="text"  formControlName="author" class="form-control" />
+              </div>
+              <div *ngIf="angForm.controls['author'].errors != null && angForm.controls['author'].invalid && (angForm.controls['author'].dirty || angForm.controls['author'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['author'].errors['required'] != null">
+                  Author is required.
+                </div>
+              </div>  
+              <div class="form-group">
+                <label class="col-md-4">Cost</label>
+                <input type="text"  formControlName="cost" class="form-control" />
+              </div>
+              <div *ngIf="angForm.controls['cost'].errors != null && angForm.controls['cost'].invalid && (angForm.controls['cost'].dirty || angForm.controls['cost'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['cost'].errors['required'] != null">
+                  Cost is required.
+                </div>
+              </div> 
+              <div class="form-group">
+                <button (click)="insertBook()"
+                    [disabled]="angForm.pristine || angForm.invalid" 
+                    class="btn btn-primary">
+                    Add Book
+                 </button>
+              </div>
+        
+        </form>
+    </div>
+</div>

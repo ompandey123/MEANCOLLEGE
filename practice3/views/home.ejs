@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (isLoggedIn) { %>
+        <p>Welcome, <%= username %></p>
+        <a href="/add">Add Employee</a>
+    <table border="5px">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Qualification</th>
+                <th>Image</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((item)=>{ %>
+            <tr>
+                <td><%= item.username %></td>
+                <td><%= item.qualification %></td>
+                <td><img src="/uploads/<%= item.image %>" width="100" height="100"></td>
+                <td><a href="/delete/<%= item._id %>">Delete</a></td>
+                <td><a href="/edit/<%= item._id %>">Edit</a></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/logout">LOGOUT</a>
+    <% } else { %>
+        <p>Please Login First</p>
+        <a href="/login">Login</a>
+        <% } %>
+        
+</body>
+</html>

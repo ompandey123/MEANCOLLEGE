@@ -1,0 +1,32 @@
+<h1 align="center">Welcome to Angular!!</h1>
+
+<table border="1" width="90%" align="center">
+  <tr><td align="center"><h1>Header</h1></td></tr>
+  <tr><td>
+        <table border="1" width="100%">
+      <tr>
+        <td>
+            <ul>
+                <li>
+                  <a routerLink="book/add" routerLinkActive="active">
+                    Insert Book
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="book/home" routerLinkActive="active">
+                    Books
+                  </a>
+                </li> 
+              </ul>
+              
+        </td>
+        <td width="70%">
+          
+            <router-outlet></router-outlet>
+        </td>
+        <td> </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td align="center"><h3>Footer</h3></td></tr>
+</table>
